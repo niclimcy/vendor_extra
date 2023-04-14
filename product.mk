@@ -1,6 +1,4 @@
-ifneq ($(filter lineage_q6x ,$(TARGET_PRODUCT)),)
-ifeq ($(WITH_GMS),true)
-WITH_GMS_TV := true
-GMS_MAKEFILE := gms_minimal.mk
-endif #WITH_GMS
-endif #TARGET_PRODUCT
+# Google Apps
+ifeq ($(WITH_GMS), true)
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+endif
